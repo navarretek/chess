@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Server.src.Models
+namespace Global.Models
 {
-    class PayloadModel
+    public class PayloadModel
     {
+        // Unique User Identifier
         public Guid UserGuid;
-        public String Move;
+        // Unique Match Identifier
         public Guid MatchGuid;
+        // Action
+        public String Move;
 
         public PayloadModel(Guid userGuid, string move, Guid matchGuid)
         {
