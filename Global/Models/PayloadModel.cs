@@ -10,13 +10,20 @@ namespace Global.Models
         public Guid UserGuid;
         // Unique Match Identifier
         public Guid MatchGuid;
-        // Action
-        public String Move;
+       
 
+        /*
         public PayloadModel(Guid userGuid, string move, Guid matchGuid)
         {
             UserGuid = userGuid;
             Move = move;
+            MatchGuid = matchGuid;
+        }
+        */
+
+        public PayloadModel(Guid userGuid, Guid matchGuid)
+        {
+            UserGuid = userGuid;
             MatchGuid = matchGuid;
         }
 
@@ -26,7 +33,7 @@ namespace Global.Models
 
         public override string ToString()
         {
-            return $"User: {UserGuid.ToString()} - Match: {MatchGuid.ToString()} - Move: {Move}";
+            return $"User: {UserGuid.ToString()} - Match: {MatchGuid.ToString()}";
         }
 
         public Byte[] ToByteArray()

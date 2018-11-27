@@ -11,7 +11,7 @@ namespace Global.Models
         public ResultStatus Status;
         public String Message;
 
-        public ResultModel(ResultStatus status, String message = "No Message.")
+        public ResultModel(ResultStatus status, Guid userGuid, Guid matchGuid, String message = "No Message.") : base(userGuid,matchGuid)
         {
             Message = message;
             Status = status;

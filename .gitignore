@@ -29,3 +29,7 @@
 /Server/bin/Debug
 /Server/obj/Debug
 /.vs/VSWorkspaceState.json
+/TesterForm/bin/Debug
+/TesterForm/obj/Debug
+/TesterForm/Properties
+/Global/Models/Class1.cs
