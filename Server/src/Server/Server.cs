@@ -22,7 +22,7 @@ namespace Server
 
         public String Port
         {
-            get => _ipAddress.ToString();
+            get => _port.ToString();
         }        
         public String IpAddress
         {
@@ -31,7 +31,7 @@ namespace Server
 
         public Server(IPAddress ipAddress, int port)
         {
-            this._ipAddress = ipAddress;
+            _ipAddress = ipAddress;
             _port = port;
         }
 
