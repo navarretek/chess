@@ -14,10 +14,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            //IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
             IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
             IPAddress ip = ipHostInfo.AddressList[0];
-
 
             Server s = new Server(ip, 8080);
             s.StartServer();

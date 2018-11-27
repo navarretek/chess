@@ -99,14 +99,39 @@ namespace Server
                 Console.Write("Listening...");
                 while (true)
                 {
+                    Console.Write("Connected");
                     TcpClient client = tcpListener.AcceptTcpClient();
                     NetworkStream stream = client.GetStream();
                     byte[] r = new byte[100];
 
                     stream.Read(r, 0, r.Length);
 
-                    Console.Write(Encoding.ASCII.GetString(r , 0, r.Length));
+                    string info = Encoding.ASCII.GetString(r, 0, r.Length);
+                    Console.Write(info);
 
+                    string userId = "";
+                    string matchId = "";
+                    string move = "";
+                    string temp = "";
+                    foreach(char ch in info)
+                    {
+                        temp = temp + ch;
+                        if (userId.Equals("") && temp.Equals("-"))
+                        {
+                            userId += temp;
+                            temp = "";
+                        }
+                        else if (matchId.Equals("") && temp.Equals("-"))
+                        {
+                            matchId += temp;
+                            temp = "";
+                        }
+                        else if (move.Equals("") && temp.Equals("-"))
+                        {
+                            move += temp;
+                            temp = "";
+                        }
+                    }
                 }
             }
             catch 
@@ -114,5 +139,6 @@ namespace Server
                 //ignore
             }
         }
+
     }
 }
